@@ -182,6 +182,7 @@ header{
 
   text-align: center;
   padding:80px 0;
+  
 
   //retina_bg
   
@@ -333,17 +334,20 @@ header{
 // #news_area
 
 #sub_cover{
-
-  text-align: center;
-  padding:80px 0;
-  
-  
-  h2{
+    padding: 80px 0 80px 0;
+    text-align: center;
+    
+   h2{
   @include fontsize(32);
   font-weight: bold;
+  letter-spacing: 2px;
   color: white;
+  text-align: center;
+  padding: 0;
+  margin: 0;
  }
- 
+
+
   //retina_bg
   
     background-image: url("../images/news/sub_cover.jpg");
@@ -353,14 +357,45 @@ header{
                     (min-resolution: 2dppx){
 
     background-image: url("../images/news/sub_cover@2x.jpg");
-                    }
-}//#sub_cover
+    background-size: cover;
 
+                    }
+                    
+
+
+ 
+ @media (min-width: 550px) {
+
+    img{
+      margin-top: 180px;
+      margin-left: 70px;
+    }
+  }
+  // min-width: 550px
+  
+  
+ 
+}//#sub_cover
+@media(max-width:550px){
+  #sub_cover{
+        padding: 40px 0 40px 0;
+  }
+  
+  #sub_cover h2{
+  @include fontsize(16);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  color: white;
+  text-align: center;
+  margin: 0 ;
+ }
+}
 
 
 #contents{
   padding: 35px 0 70px 0;
   line-height: 24px;
+  color :#808080;
   
     #main{
     padding: 0 20px 0 0;
@@ -368,9 +403,9 @@ header{
      h2{
     @include fontsize(20);
     font-weight: bold;
-    margin: 0 0 20px 0;
+    margin-bottom: 2rem;
     color: $blue1;
-    padding: 0 0 20px 0;
+    padding-bottom: 15px;
     border-bottom-width: 3px;
     border-bottom: 3px solid $blue1;
     }
@@ -381,8 +416,9 @@ header{
         margin-bottom: 25px;
         
         th{
-          padding: 20px 0 20px 0;
+          padding: 20px 20px 20px 0;
           font-weight: bold;
+          color:#626262 ;
         }
         td{
           padding: 20px 0 20px 0;
@@ -401,22 +437,28 @@ header{
         span{
           color: $blue1;
           font-weight: bold;
-          display: inline;
           margin-bottom: 0px;
           padding: 0 10px 0 0;
+
+    
         }
         }
     }//.news_li
 
     }//main
+    
+           
 
   .pc_sidemenu{
     
   h3{
-      @include fontsize(14);
+      font-size: 1.4rem;
+      font-weight: bold;
       color: $blue1;
       padding: 15px;
-      background-color: $gray_blue;
+      background-color:#f3f9fb;
+      letter-spacing: 0.2rem;
+      
     
     }
   
@@ -431,6 +473,7 @@ header{
 
       
       li{
+        text-decoration: none;
         list-style: none;
         border-bottom: 1px solid #e5e5e5;
         background-size: 4px 8px;
@@ -454,6 +497,9 @@ header{
           background-image: url("../images/news/side_arrow@2x.png");
 
         }
+        a{
+          text-decoration: none;
+        }
         
       }//li
 
@@ -461,16 +507,32 @@ header{
       
     }//pc
     
-     @media (max-width: 550px) {
-    .pc_sidemenu{
-      display: none;
-    }
-    }
-    
+       
  }//contents
 
 
+@media(max-width: 550px){
+      .pc_sidemenu{
+      display: none;
+    }
+  
+      #contents{
+      padding: 20px 0;
+      
+      #main{
+        @include fontsize(15);
+        display: block;
+        padding: 0;
 
+      h2{
+        @include fontsize(15);
+      }
+      span{ 
+        display: block;
+           }
+      }//main
+      }
+      }
 
 
 
